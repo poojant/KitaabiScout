@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/feature_req_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+        </android.support.v7.widget.Toolbar>
+
+        </FrameLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/filter"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genre Filter"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"/>
+        <LinearLayout
+            android:id="@+id/filterLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:id="@+id/filterName"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="All Genre"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/applyFilter"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Apply"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:background="@drawable/loginbutton_background"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_bookList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:background="#f2f2f2"
+            android:paddingBottom="5dp"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</android.widget.LinearLayout>

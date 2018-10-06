@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AccountSetting">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/accout_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:background="@drawable/login_background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/userimg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.5"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/reading"
+                    android:background="?android:attr/selectableItemBackground"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rect"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="User Name"
+                    android:textColor="@color/lightgrey"
+                    android:textSize="5pt" />
+
+                <TextView
+                    android:id="@+id/accName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="start"
+                    android:paddingBottom="10dp"
+                    android:text="Community Name  "
+                    android:textSize="7pt" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/accGen1Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rect"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/utag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="Favorite Genre 1"
+                    android:textColor="@color/lightgrey"
+                    android:textSize="5pt" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/accGen1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="start"
+                        android:paddingBottom="10dp"
+                        android:text="Tap to select genre 1"
+                        android:textSize="7pt" />
+                    <RelativeLayout
+                        android:id="@+id/genList1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="15dp"
+                            android:paddingTop="2dp"
+                            app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/gen1SC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="5dp"
+                    android:visibility="gone">
+                    <Button
+                        android:id="@+id/gen1Save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:background="@color/blue_light"/>
+                    <Button
+                        android:id="@+id/gen1Cancel"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:text="Cancel"
+                        android:textAllCaps="false"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/red"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/accGen2Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rect"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="start"
+                    android:paddingTop="5dp"
+                    android:text="Favorite Genre 2"
+                    android:textColor="@color/lightgrey"
+                    android:textSize="5pt" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/accGen2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="start"
+                        android:paddingBottom="10dp"
+                        android:text="Tap to select genre 2"
+                        android:textSize="7pt" />
+                    <RelativeLayout
+                        android:id="@+id/genList2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="15dp"
+                            android:paddingTop="2dp"
+                            app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/gen2SC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="5dp"
+                    android:visibility="gone">
+                    <Button
+                        android:id="@+id/gen2Save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:background="@color/blue_light"/>
+                    <Button
+                        android:id="@+id/gen2Cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Cancel"
+                        android:textAllCaps="false"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/red"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rect"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="start"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="Email"
+                    android:textSize="7pt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rect"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="start"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="******"
+                    android:textSize="7pt" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.widget.LinearLayout>
