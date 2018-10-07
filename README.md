@@ -1,2 +1,2 @@
 # KitaabiScout
-A Book Scouter application with advanced searching options. Books are listed according to decreasing order of book rating. User can Rate any book, Bookmark it, Recommend it to their friends and even can buy the book using E-commerce sites!  
+A Book Scouter application with advanced searching options. Books are listed according to decreasing order of book rating. User can Rate any book, Bookmark it, Recommend it to their friends and even can buy the book using E-commerce sites! It also has an additional admin feature where the admin can send a broadcast message to all the users about any updates via a push notification using the app itself!
