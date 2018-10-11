@@ -25,7 +25,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AccountSetting" />
-        <activity android:name=".Bookmark"></activity>
+        <activity android:name=".Bookmark" />
+        <activity android:name=".Broadcast"></activity>
     </application>
 
 </manifest>
