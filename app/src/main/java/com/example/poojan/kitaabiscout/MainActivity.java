@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity{
     private FirebaseAuth auth;
     private FirebaseUser user;
     private TextView userName, userEmail;
-    DatabaseReference dbuser;
+    DatabaseReference dbuser, dbtoken;
     RecyclerView recyclerView;
     SwipeRefreshLayout mSwipeRefreshLayout;
     LinearLayoutManager layoutManager;
@@ -88,6 +88,20 @@ public class MainActivity extends AppCompatActivity{
                         drawer.closeDrawers();
 
                         if(menuItem.getItemId() == R.id.logout){
+                            dbtoken = FirebaseDatabase.getInstance().getReference().child("user_details")
+                                    .child(auth.getUid()).child("token");
+                            dbtoken.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if(dataSnapshot.exists()){
+                                        dataSnapshot.getRef().removeValue();
+                                    }
+                                }
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
                             auth.signOut();
                             user = FirebaseAuth.getInstance().getCurrentUser();
                             if (user == null) {
@@ -105,6 +119,10 @@ public class MainActivity extends AppCompatActivity{
                         }
                         if(menuItem.getItemId() == R.id.bookmark){
                             Intent intent = new Intent(MainActivity.this, Bookmark.class);
+                            startActivity(intent);
+                        }
+                        if(menuItem.getItemId() == R.id.broadcast){
+                            Intent intent = new Intent(MainActivity.this, Broadcast.class);
                             startActivity(intent);
                         }
                         // Add code here to update the UI based on the item selected

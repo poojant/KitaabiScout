@@ -8,13 +8,16 @@ public class User {
     private String userImgUrl;
     private String favGenre1;
     private String favGenre2;
+    private String token;
 
-    public User(String userName, String userEmail, String userImgUrl, String favGenre1, String favGenre2) {
+
+    public User(String userName, String userEmail, String userImgUrl, String favGenre1, String favGenre2, String token) {
         this.userName = userName;
         this.userEmail = userEmail;
         this.userImgUrl = userImgUrl;
         this.favGenre1 = favGenre1;
         this.favGenre2 = favGenre2;
+        this.token = token;
     }
 
     public User() {}
@@ -57,5 +60,11 @@ public class User {
 
     public void setFavGenre2(String favGenre2) {
         this.favGenre2 = favGenre2;
+    }
+
+    public String getToken(){ return token; }
+
+    public void setToken(String favGenre2) {
+        this.token = token;
     }
 }

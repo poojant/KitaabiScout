@@ -22,8 +22,9 @@ public class BookAdapterViewHolder extends RecyclerView.ViewHolder {
     ImageView bookImage, bookmark, share;
     FirebaseAuth auth;
     DatabaseReference dbref;
-    String key, title, author, genre;
+    String key, title, author, genre, genreBasedBookKey;
     Float rating;
+    Long id;
     public BookAdapterViewHolder(View itemView) {
         super(itemView);
         bookTitle = itemView.findViewById(R.id.bookTitle);

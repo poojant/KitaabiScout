@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class Signup extends AppCompatActivity {
     public ProgressDialog dialog;
@@ -111,11 +112,11 @@ public class Signup extends AppCompatActivity {
                                     Log.d("Info", "Task successful..");
                                     Log.d("Info", "Commit...");
                                     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("user_details");
-
+                                    String token = FirebaseInstanceId.getInstance().getToken();
                                     Log.d("Info", "Username: " + username);
                                     Log.d("Info", "Email:" + email);
 
-                                    User user = new User(username, email, null, null, null);
+                                    User user = new User(username, email, null, null, null,token);
                                     mDatabase.child(auth.getUid()).setValue(user);
 
                                     dialog.dismiss();

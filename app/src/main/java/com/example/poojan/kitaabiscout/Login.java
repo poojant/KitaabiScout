@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class Login extends AppCompatActivity {
     ProgressDialog loginProgress;
@@ -26,6 +29,7 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth auth;
     private TextView btnReset;
     private Button btnLogin, btnSignup;
+    DatabaseReference dbtoken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +96,10 @@ public class Login extends AppCompatActivity {
                                     }
                                 } else {
                                     loginProgress.dismiss();
+                                    String token = FirebaseInstanceId.getInstance().getToken();
+                                    dbtoken = FirebaseDatabase.getInstance().getReference().child("user_details")
+                                            .child(auth.getUid()).child("token");
+                                    dbtoken.setValue(token);
                                     startActivity(new Intent(Login.this, MainActivity.class));
                                     finish();
                                 }
