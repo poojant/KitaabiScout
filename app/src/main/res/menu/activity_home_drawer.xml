@@ -4,19 +4,24 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-    <item
-        android:id="@+id/bookmark"
-        android:icon="@drawable/favorite"
-        android:title="Bookmark" />
+        <item
+            android:id="@+id/bookmark"
+            android:icon="@drawable/favorite"
+            android:title="Bookmark" />
 
-    <item
-        android:id="@+id/accSetting"
-        android:title="Account setting"
-        android:icon="@drawable/account_settings_icon"/>
-    <item
-        android:id="@+id/logout"
-        android:icon="@drawable/book"
-        android:title="Logout"
+        <item
+            android:id="@+id/accSetting"
+            android:title="Account setting"
+            android:icon="@drawable/account_settings_icon"/>
+        <item
+            android:id="@+id/broadcast"
+            android:icon="@drawable/book"
+            android:title="Broadcast"
+            />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/book"
+            android:title="Logout"
         />
     </group>
 </menu>
