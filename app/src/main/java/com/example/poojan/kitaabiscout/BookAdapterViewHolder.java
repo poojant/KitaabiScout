@@ -22,7 +22,7 @@ public class BookAdapterViewHolder extends RecyclerView.ViewHolder {
     ImageView bookImage, bookmark, share;
     FirebaseAuth auth;
     DatabaseReference dbref;
-    String key, title, author, genre, genreBasedBookKey;
+    String key, title, author, genre, genreBasedBookKey, amazonUri;
     Float rating;
     Long id;
     public BookAdapterViewHolder(View itemView) {
@@ -91,6 +91,9 @@ public class BookAdapterViewHolder extends RecyclerView.ViewHolder {
     public void setAvgRating(Float avgRating){
         rating = avgRating;
         bookRating.setText(String.valueOf(avgRating));
+    }
+    public void setAmazonUri(String amazonUri){
+        this.amazonUri = amazonUri;
     }
     public void setImage(String imgUri){
         Glide.with(context).load(imgUri).into(bookImage);

@@ -236,6 +236,7 @@ public class MainActivity extends AppCompatActivity{
                 bookAdapterViewHolder.setAuthor(book.getAuthors());
                 bookAdapterViewHolder.setGenre(book.getGenre());
                 bookAdapterViewHolder.setAvgRating(book.getAverage_rating());
+                bookAdapterViewHolder.setAmazonUri(book.getAmazon_uri());
                 bookAdapterViewHolder.setImage(book.getImage_url());
             }
         };

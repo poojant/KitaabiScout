@@ -8,9 +8,10 @@ public class Book {
     private String image_url;
     private String title;
     private Long ratings_count;
+    private String amazon_uri;
 
     public Book(String authors,Float average_rating, String genre, Long id
-            , String image_url, String title, Long ratings_count){
+            , String image_url, String title, Long ratings_count, String amazon_uri){
         this.authors = authors;
         this.average_rating = average_rating;
         this.genre = genre;
@@ -18,6 +19,7 @@ public class Book {
         this.image_url = image_url;
         this.title = title;
         this.ratings_count = ratings_count;
+        this.amazon_uri = amazon_uri;
     }
 
     public Book() {}
@@ -50,6 +52,8 @@ public class Book {
         return ratings_count;
     }
 
+    public String getAmazon_uri(){ return amazon_uri;}
+
     public void setAuthors(String authors) {
         this.authors = authors;
     }
@@ -77,4 +81,6 @@ public class Book {
     public void setRatings_count(Long ratings_count) {
         this.ratings_count = ratings_count;
     }
+
+    public  void setAmazon_uri(String amazon_uri){ this.amazon_uri = amazon_uri;}
 }
