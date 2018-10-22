@@ -26,7 +26,8 @@
         </activity>
         <activity android:name=".AccountSetting" />
         <activity android:name=".Bookmark" />
-        <activity android:name=".Broadcast"></activity>
+        <activity android:name=".Broadcast" />
+        <activity android:name=".UserFeedback"></activity>
     </application>
 
 </manifest>

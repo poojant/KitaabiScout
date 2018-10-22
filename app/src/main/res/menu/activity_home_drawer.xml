@@ -17,6 +17,7 @@
             android:id="@+id/broadcast"
             android:icon="@drawable/book"
             android:title="Broadcast"
+            android:visible="false"
             />
         <item
             android:id="@+id/logout"

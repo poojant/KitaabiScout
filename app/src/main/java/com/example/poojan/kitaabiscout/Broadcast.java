@@ -47,7 +47,7 @@ public class Broadcast extends AppCompatActivity {
         imgMic = findViewById(R.id.mic);
 
         auth = FirebaseAuth.getInstance();
-        final DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+        /*final DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         DatabaseReference tp = FirebaseDatabase.getInstance().getReference().child("books");
         tp.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -64,7 +64,7 @@ public class Broadcast extends AppCompatActivity {
 
             }
         });
-        /*final DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("books");
+        final DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("books");
         db.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

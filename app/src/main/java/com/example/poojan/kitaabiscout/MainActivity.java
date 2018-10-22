@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity{
         filterName = findViewById(R.id.filterName);
         applyFilter = findViewById(R.id.applyFilter);
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        final NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -144,6 +144,9 @@ public class MainActivity extends AppCompatActivity{
                 User user = dataSnapshot.getValue(User.class);
                 userName.setText(user.getUserName().toString());
                 userEmail.setText(user.getUserEmail().toString());
+                if(user.getUserName().toString().equals("Laura")){
+                    navigationView.getMenu().findItem(R.id.broadcast).setVisible(true);
+                }
             }
 
             @Override

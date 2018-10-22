@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -18,11 +19,12 @@ import com.google.firebase.database.ValueEventListener;
 public class BookAdapterViewHolder extends RecyclerView.ViewHolder {
 
     Context context;
+    LinearLayout wholeCard;
     TextView bookTitle, bookAuthor, bookGenre, bookRating;
     ImageView bookImage, bookmark, share;
     FirebaseAuth auth;
     DatabaseReference dbref;
-    String key, title, author, genre, genreBasedBookKey, amazonUri;
+    String key, title, author, genre, genreBasedBookKey, amazonUri, imgUri;
     Float rating;
     Long id;
     public BookAdapterViewHolder(View itemView) {
@@ -34,8 +36,24 @@ public class BookAdapterViewHolder extends RecyclerView.ViewHolder {
         bookImage = itemView.findViewById(R.id.bookImage);
         bookmark = itemView.findViewById(R.id.bookmark);
         share = itemView.findViewById(R.id.share);
+        wholeCard = itemView.findViewById(R.id.wholeCard);
 
         auth = FirebaseAuth.getInstance();
+
+        wholeCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,UserFeedback.class);
+                intent.putExtra("key",key);
+                intent.putExtra("title",title);
+                intent.putExtra("author",author);
+                intent.putExtra("amazonUri",amazonUri);
+                intent.putExtra("genre",genre);
+                intent.putExtra("rating",rating);
+                intent.putExtra("imgUri",imgUri);
+                context.startActivity(intent);
+            }
+        });
         bookmark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +114,7 @@ public class BookAdapterViewHolder extends RecyclerView.ViewHolder {
         this.amazonUri = amazonUri;
     }
     public void setImage(String imgUri){
+        this.imgUri = imgUri;
         Glide.with(context).load(imgUri).into(bookImage);
     }
 

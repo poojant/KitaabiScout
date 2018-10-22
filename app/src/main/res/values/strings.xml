@@ -6,4 +6,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="speech_prompt">Say something&#8230;</string>
     <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="rateLabel">RATE THIS BOOK</string>
+    <string name="buyButtonLabel">BUY NOW!!</string>
+    <string name="commentLabel">COMMENTS</string>
+    <string name="user_name">USERNAME</string>
+    <string name="commentUser">USERCOMMENT</string>
 </resources>
